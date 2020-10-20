@@ -52,7 +52,7 @@ def article_source(id):
     article_source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,api_key)
 
     print(article_source_url)
-    
+
     with urllib.request.urlopen(article_source_url) as url:
         article_source_data = url.read()
         article_source_response = json.loads(article_source_data)
@@ -82,6 +82,24 @@ def process_articles_results(news):
             article_source_results.append(article_objects)
 
     return article_source_results
+
+def get_headlines():
+   
+    get_headlines_url = 'https://newsapi.org/v2/top-headlines?country=us&apiKey={}'.format(api_key)
+    print(get_headlines_url)
+
+    
+    with urllib.request.urlopen(get_headlines_url) as url:
+        get_headlines_data = url.read()
+        get_headlines_response = json.loads(get_headlines_data)
+
+        get_headlines_results = None
+
+        if get_headlines_response['articles']:
+            get_headlines_list = get_headlines_response['articles']
+            get_headlines_results = process_articles_results(get_headlines_list)
+
+    return get_headlines_results
 
 
 
