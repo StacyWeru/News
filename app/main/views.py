@@ -3,6 +3,7 @@ from flask import render_template , request ,redirect,url_for
 from newsapi import NewsApiClient
 
 from . import main
+from ..requests import get_headlines , get_source , article_source
 
 #Views
 @main.route('/')
@@ -13,16 +14,18 @@ def index():
     '''
 
     source = get_source()
-    
+    headlines = get_headlines()
+    return render_template('index.html' , sources = source , headlines = headlines)
 
 
-@main.route('/news/<news_id>')
-def news(news_id):
+
+@main.route('/article/<id>')
+def article(id):
 
     '''
-    View news page function that returns the news details page and its data
+    View articles page function that returns the articles details page and its data
     '''
 
-    news_id = 'News article page of your choice'
-    return render_template ('news.html', id = news_id)
+    articles = article_source(id)
+    return render_template ('news.html',articles = articles,id = id)
 
