@@ -5,7 +5,7 @@
 ## Description
 This is a web application that helps one to view various news from various sources .It helps on catching up with top news.It is built using the NEWS API.
 
-The site can be viewed at 
+The site can be viewed at https://catchupnews-app.herokuapp.com/
 
 ## SetUp / Installation Requirements
 ### Prerequisites
