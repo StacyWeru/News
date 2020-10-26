@@ -16,7 +16,7 @@ The site can be viewed at https://catchupnews-app.herokuapp.com/
 ### Cloning
 * In your terminal:
 
-        $ git clone https://github.com/emdeechege/NewsApi/
+        $ git clone https://github.com/StacyWeru/NewsApi/
         $ cd NewsPI
 
 ## Running the Application
